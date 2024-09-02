@@ -1,4 +1,98 @@
-import Image from "next/image";
+import Image from 'next/image';
+import Link from 'next/link';
+
+export default function Home() {
+    return (
+        <div>
+            {/* Cabeçalho */}
+            <header className="bg-gray-800 text-white p-6 text-center">
+                <h1 className="text-3xl font-bold">Nome do Ilustrador</h1>
+                <nav className="mt-4">
+                    <Link href="#home" className="mr-4">Início</Link>
+                    <Link href="#trabalhos" className="mr-4">Trabalhos</Link>
+                    <Link href="#sobre" className="mr-4">Sobre</Link>
+                    <Link href="#contato" className="mr-4">Contato</Link>
+                </nav>
+            </header>
+
+            {/* Seção de Apresentação */}
+            <section id="home" className="hero text-center p-12">
+                <Image
+                    src="/imagem-destaque.jpg"
+                    alt="Imagem de Destaque"
+                    width={1200}
+                    height={500}
+                    className="object-cover w-full h-auto max-h-[400px]"
+                />
+                <div className="mt-8">
+                    <h2 className="text-4xl font-semibold">Bem-vindo ao Portfólio</h2>
+                    <p className="mt-4 text-lg">Um breve texto sobre o estilo do ilustrador.</p>
+                </div>
+            </section>
+
+            {/* Galeria de Trabalhos */}
+            <section id="trabalhos" className="gallery p-12 bg-white">
+                <h2 className="text-3xl font-semibold text-center mb-8">Trabalhos Recentes</h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                    <div className="work-item text-center">
+                        <Image src="/trabalho1.jpg" alt="Trabalho 1" width={500} height={500} />
+                        <p className="mt-4">Descrição do Trabalho 1</p>
+                    </div>
+                    <div className="work-item text-center">
+                        <Image src="/trabalho2.jpg" alt="Trabalho 2" width={500} height={500} />
+                        <p className="mt-4">Descrição do Trabalho 2</p>
+                    </div>
+                    {/* Adicione mais itens conforme necessário */}
+                </div>
+            </section>
+
+            {/* Sobre o Ilustrador */}
+            <section id="sobre" className="about p-12 bg-gray-100 text-center">
+                <h2 className="text-3xl font-semibold mb-8">Sobre o Ilustrador</h2>
+                <p>Uma breve biografia sobre o ilustrador, experiência, formação, etc.</p>
+            </section>
+
+            {/* Seção de Contato */}
+            <section id="contato" className="contact p-12 bg-white text-center">
+                <h2 className="text-3xl font-semibold mb-8">Contato</h2>
+                <form className="max-w-lg mx-auto">
+                    <label htmlFor="nome" className="block text-left mb-2">Nome:</label>
+                    <input
+                        type="text"
+                        id="nome"
+                        name="nome"
+                        className="w-full p-2 mb-4 border border-gray-300"
+                    />
+                    <label htmlFor="email" className="block text-left mb-2">Email:</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        className="w-full p-2 mb-4 border border-gray-300"
+                    />
+                    <label htmlFor="mensagem" className="block text-left mb-2">Mensagem:</label>
+                    <textarea
+                        id="mensagem"
+                        name="mensagem"
+                        className="w-full p-2 mb-4 border border-gray-300"
+                    ></textarea>
+                    <button type="submit" className="bg-blue-500 text-white p-2 rounded">Enviar</button>
+                </form>
+            </section>
+
+            {/* Rodapé */}
+            <footer className="bg-gray-800 text-white p-6 text-center">
+                <p>&copy; 2024 Nome do Ilustrador. Todos os direitos reservados.</p>
+            </footer>
+        </div>
+    );
+}
+
+
+
+
+
+/* import Image from "next/image";
 
 export default function Home() {
   return (
@@ -110,4 +204,4 @@ export default function Home() {
       </div>
     </main>
   );
-}
+} */

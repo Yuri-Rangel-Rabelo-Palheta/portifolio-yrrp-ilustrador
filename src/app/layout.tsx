@@ -1,4 +1,16 @@
-import type { Metadata } from "next";
+import './globals.css';
+
+export default function Layout({ children }: { children: React.ReactNode }) {
+    return (
+        <html lang="pt-BR">
+            <body>{children}</body>
+        </html>
+    );
+}
+
+
+
+/* import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -19,4 +31,4 @@ export default function RootLayout({
       <body className={inter.className}>{children}</body>
     </html>
   );
-}
+} */
